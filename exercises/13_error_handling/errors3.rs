@@ -2,7 +2,7 @@
 // `total_cost` function from the previous exercise. It's not working though!
 // Why not? What should we do to fix it?
 
-use std::num::ParseIntError;
+use std::{collections::btree_map::Values, num::ParseIntError};
 
 // Don't change this function.
 fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
@@ -20,7 +20,10 @@ fn main() {
     let pretend_user_input = "8";
 
     // Don't change this line.
-    let cost = total_cost(pretend_user_input)?;
+    let cost = total_cost(pretend_user_input);
+    if let Err(Value) = cost{
+        panic!(Value)
+    }
 
     if cost > tokens {
         println!("You can't afford that many!");
