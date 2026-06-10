@@ -7,7 +7,7 @@
 fn generate_nametag_text(name: String) -> Result<String, String> {
     if name.is_empty() {
         // Empty names aren't allowed
-        Err(format!("Hi! My name is {name}"))
+        Err(String::from("Empty names aren't allowed"))
     } else {
         Ok(format!("Hi! My name is {name}"))
     }
